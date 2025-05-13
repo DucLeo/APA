@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Анализ уровня физической активности</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="frame1">
+                <h2>Программа оценки физической активности</h2>
+                <p>Интенсивность физической активности за одну минуту будет оцениваться по параметрам:</p>
+                <ol>
+                    <li>Возраст<p></p></li>
+                    <li>Средняя частота сердечных сокращений в состоянии покоя RHR. Рекомендуется измерять среднюю частоту сердечных сокращений в течение 5 минут, сидя неподвижно<p></p></li>
+                    <li>Средняя частота сердечных сокращений HRA во время активности<p></p></li>
+                    <li>Среднее ускорение во время активности, см/с&sup2<p></p></li>
+                    <li>Общее количество выполненных шагов<p></p></li>
+                    <li>Индекс наклона относительно положения стоя.<p>Значение от 0 до 1</p></li>
+                    <li>Индекс наклона относительно положения сидя.<p>Значение от 0 до 1</p></li>
+                    <li>Индекс наклона относительно положения лежа.<p>Значение от 0 до 1</p></li>
+                </ol>
+                <p>После заполнения всей вышеуказанной информации нажмите кнопку «Анализ», чтобы увидеть результаты.</p>
+            </div>
+            
+            <div class="frame2">
+                <div class="input-group">
+                    <label for="age">Ваш возраст:</label>
+                    <input type="number" id="age" step="any" placeholder="Введите целое число" />
+                </div>
+                <div class="input-group">
+                    <label for="rhr">Частота сердечных сокращений в состоянии покоя:</label>
+                    <input type="number" id="rhr" step="any" placeholder="Введите целое число" />
+                </div>
+                <div class="input-group">
+                    <label for="hr">Средняя частота сердечных сокращений:</label>
+                    <input type="number" id="hr" step="any" placeholder="Введите целое число" />
+                </div>
+                <div class="input-group">
+                    <label for="vma">Среднее ускорение:</label>
+                    <input type="number" id="vma" step="any" placeholder="Введите целое число" />
+                </div>
+                <div class="input-group">
+                    <label for="steps">Количество шагов:</label>
+                    <input type="number" id="steps" step="any" placeholder="Введите целое число" />
+                </div>
+                <div class="input-group">
+                    <label for="iStanding">Индекс наклона относительно положения стоя:</label>
+                    <input type="number" id="iStanding" step="any" placeholder="Введите число от 0 до 1" />
+                </div>
+                <div class="input-group">
+                    <label for="iSitting">Индекс наклона относительно положения сидя:</label>
+                    <input type="number" id="iSitting" step="any" placeholder="Введите число от 0 до 1" />
+                </div>
+                <div class="input-group">
+                    <label for="iLying">Индекс наклона относительно положения лежа:</label>
+                    <input type="number" id="iLying" step="any" placeholder="Введите число от 0 до 1" />
+                </div>
+                <button onclick="analyzePA()">Анализ</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="confirm" id="confirm1"></div>
+        <div class="confirm" id="confirm2"></div>
+        <div class="confirm" id="confirm3"></div>
+        <div class="confirm" id="confirm4"></div>
+        <div class="confirm" id="confirm5"></div>
+        <div class="confirm" id="confirm6"></div>
+        <div class="confirm" id="confirm6"></div>
+        <div class="result" id="result"></div>
+        <button onclick="quitResult()">Назад</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
